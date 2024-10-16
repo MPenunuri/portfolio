@@ -16,6 +16,10 @@
 
     .p {
       @include p();
+
+      @include tablet() {
+        text-align: center;
+      }
     }
   }
 
