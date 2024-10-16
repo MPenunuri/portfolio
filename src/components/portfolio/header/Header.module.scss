@@ -1,0 +1,38 @@
+@use "../../../styles.scss" as *;
+
+.header {
+  position: relative;
+  @include header();
+
+  .section {
+    width: 50%;
+    max-width: 50vw;
+    min-height: 0;
+    @include section();
+
+    .h1 {
+      @include h1();
+    }
+
+    .p {
+      @include p();
+    }
+  }
+
+  .buttonsContainer {
+    @include flex-center();
+    gap: 0.5rem;
+
+    @include tablet() {
+      flex-direction: column;
+    }
+
+    button {
+      @include button();
+      background-color: var(--primary-decorative-color);
+      color: white;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+  }
+}

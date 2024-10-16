@@ -1,0 +1,31 @@
+@use "../../../styles.scss" as *;
+
+.button {
+  width: 20px;
+  @include button();
+  background-color: var(--primary-decorative-color);
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  padding: 0 1rem;
+
+  img {
+    width: auto;
+    height: 25px;
+    filter: invert(1);
+  }
+
+  span {
+    @include span();
+    top: -5px;
+    right: -300%;
+    background-color: var(--secondary-background-color);
+    color: var(--seconday-text-color);
+  }
+
+  &:hover {
+    span {
+      opacity: 1;
+    }
+  }
+}

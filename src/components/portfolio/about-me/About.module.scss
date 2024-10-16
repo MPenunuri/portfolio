@@ -1,0 +1,45 @@
+@use "../../../styles.scss" as *;
+
+.div {
+  @include flex-center();
+  flex-direction: row-reverse;
+  gap: 0;
+  width: 100%;
+  max-width: 1600px;
+  padding: 1rem;
+  position: relative;
+  box-sizing: border-box;
+
+  @include tablet() {
+    flex-direction: column-reverse;
+  }
+}
+
+.imgSection {
+  width: 30%;
+  align-items: center;
+  @include section();
+
+  .img {
+    max-width: 80%;
+    filter: invert(32%) sepia(100%) saturate(650%) hue-rotate(209deg)
+      brightness(100%) contrast(100%)
+      drop-shadow(2px 2px 10px var(--primary-text-color));
+
+    @include tablet() {
+      max-width: 200px;
+    }
+  }
+}
+
+.section {
+  @include section();
+
+  .h2 {
+    @include h2();
+  }
+
+  .p {
+    @include p();
+  }
+}

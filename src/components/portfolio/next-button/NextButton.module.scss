@@ -1,0 +1,23 @@
+@use "../../../styles.scss" as *;
+
+.button {
+  width: 20px;
+  @include button();
+  background-color: white;
+
+  img {
+    width: 18px;
+    max-width: 18px;
+  }
+
+  span {
+    @include span();
+    top: -20px;
+  }
+
+  &:hover {
+    span {
+      opacity: 1;
+    }
+  }
+}

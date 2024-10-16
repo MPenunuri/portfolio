@@ -1,0 +1,59 @@
+@use "../../../styles.scss" as *;
+
+.section {
+  @include flex-center(column);
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  justify-content: flex-start;
+  width: 100%;
+  min-width: 100vw;
+  max-width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.h2 {
+  @include h2();
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+  align-items: center;
+  gap: 4rem;
+  width: 90%;
+  max-width: 1200px;
+  height: 90%;
+  grid-auto-flow: dense;
+}
+
+.projectContainer {
+  cursor: pointer;
+  border-radius: 20px;
+  color: white;
+  background-color: var(--primary-decorative-color);
+  width: 300px;
+  @include shadow();
+  @include flex-center(column);
+  justify-content: flex-start;
+  height: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.h4 {
+  @include h4();
+}
+
+.logosContainer {
+  @include flex-center();
+  max-width: 90%;
+}
+
+.logo {
+  width: 100px;
+  filter: drop-shadow(1px 1px 10px white);
+}

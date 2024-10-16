@@ -1,0 +1,110 @@
+@use "../../../styles.scss" as *;
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container {
+  @include flex-center();
+  align-items: flex-start;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+.buttonContainer {
+  position: relative;
+}
+
+.projectContainer {
+  color: var(--primary-text-color);
+  background-color: var(--primary-background-color);
+  padding: 2rem;
+  margin-left: 20px;
+  width: 85vw;
+  max-width: 800px;
+  @include flex-center(column);
+  justify-content: flex-start;
+}
+
+.h2 {
+  padding-top: 3rem;
+  font-weight: 800;
+  font-size: 1.5rem;
+  text-decoration: none;
+  margin: 0;
+  text-align: center;
+}
+
+.logosContainer {
+  @include flex-center();
+  max-width: 90%;
+
+  img {
+    width: 200px;
+  }
+
+  @include tablet() {
+    flex-direction: column;
+  }
+}
+
+.p {
+  @include p();
+  text-align: justify;
+}
+
+.h5 {
+  font-size: 1.25rem;
+  padding-top: 3rem;
+  font-weight: 800;
+  text-decoration: none;
+  margin: 0;
+  text-align: center;
+}
+
+.ul {
+  @include ul();
+}
+
+.li {
+  @include li();
+}
+
+.ul2 {
+  padding-left: 2rem;
+}
+
+.buttonsContainer {
+  @include flex-center();
+
+  button {
+    width: 120px;
+    @include button();
+    background-color: var(--primary-decorative-color);
+
+    img {
+      max-height: 30px;
+      filter: invert(1);
+    }
+
+    span {
+      @include span();
+      top: -4rem;
+      left: 0rem;
+      right: 0;
+      background-color: var(--secondary-background-color);
+      color: var(--seconday-text-color);
+    }
+
+    &:hover {
+      span {
+        opacity: 1;
+      }
+    }
+  }
+}

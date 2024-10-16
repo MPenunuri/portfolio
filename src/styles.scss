@@ -1,0 +1,81 @@
+@forward "./resets";
+@forward "./variables";
+@forward "./mixins";
+
+@use "./mixins" as *;
+@use "./variables" as *;
+
+body {
+  font-family: $primary-font;
+  width: 100%;
+  max-width: 100vw;
+  color: var(--primary-text-color);
+  background-color: var(--primary-background-color);
+  overflow-x: hidden;
+}
+
+:root {
+  --primary-text-color: black;
+  --secondary-text-color: white;
+  --primary-background-color: white;
+  --secondary-background-color: black;
+  --primary-decorative-color: rgb(73, 73, 208);
+  --secondary-decorative-color: rgb(203, 203, 236);
+}
+
+.mainContainer {
+  opacity: 0;
+  transition: all 2s ease;
+
+  &.show {
+    opacity: 1;
+  }
+}
+
+.header {
+  min-height: 100vh;
+  position: relative;
+}
+
+.about,
+.projects {
+  overflow-x: hidden;
+  overflow-y: visible;
+  min-height: 100vh;
+  height: auto;
+  padding: 2rem;
+  div {
+    opacity: 0;
+    transform: translate(-100vw, 0);
+    transition:
+      transform 1s ease-in-out,
+      opacity 1s ease-in-out;
+  }
+  &.show {
+    div {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+}
+
+.profile {
+  overflow-x: hidden;
+  overflow-y: visible;
+  min-height: 100vh;
+  height: auto;
+  padding: 2rem;
+  div {
+    opacity: 0;
+    transform: translate(100vw, 0);
+    transition:
+      transform 1s ease-in-out,
+      opacity 1s ease-in-out;
+  }
+  &.show {
+    div {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+}
