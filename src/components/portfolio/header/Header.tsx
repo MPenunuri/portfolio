@@ -24,6 +24,7 @@ export default function Header() {
             Professional profile
           </button>
           <button onClick={() => scrollTo("#projects")}>Projects</button>
+          <button onClick={() => scrollTo("#contact")}>Contact</button>
         </div>
       </section>
       <SelfImg />

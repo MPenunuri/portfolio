@@ -5,6 +5,7 @@ import Profile from "./profile/Profile";
 import Projects from "./projects/Projects";
 import { useEffect, useRef, useState } from "react";
 import NextButton from "./next-button/NextButton";
+import Contact from "./contact/Contact";
 
 const ScrollToSection = () => {
   useEffect(() => {
@@ -26,6 +27,7 @@ const App = () => {
   const aboutRef = useRef<HTMLDivElement>(null);
   const profileRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
 
   const updateUrlHash = (sectionId: string) => {
     if (window.location.hash !== `#${sectionId}`) {
@@ -41,6 +43,7 @@ const App = () => {
       { ref: aboutRef, id: "about" },
       { ref: profileRef, id: "profile" },
       { ref: projectsRef, id: "projects" },
+      { ref: contactRef, id: "contact" },
     ];
 
     const onScroll = () => {
@@ -88,6 +91,9 @@ const App = () => {
       </div>
       <div id="projects" className="projects" ref={projectsRef}>
         <Projects />
+      </div>
+      <div id="contact" className="contact" ref={contactRef}>
+        <Contact />
       </div>
     </div>
   );
